@@ -34,10 +34,12 @@
 ## Lei de Ohm
 
 - Em termos gerais, a lei de Ohm afirma que a resistência ($R$) de um dispositivo condutor é dada pela razão da tensão elétrica ($V$) pela corrente ($A$):
+
 $$ 
 R = \frac{V}{I}
 $$
 - Podemos calcular a corrente de um circuito elétrico utilizando essa equivalência da seguinte forma:
+
 $$
 I = \frac{V}{R}
 $$
