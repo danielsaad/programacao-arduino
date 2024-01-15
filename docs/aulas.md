@@ -6,7 +6,7 @@
 ## Tensão elétrica
 
 - A tensão elétrica, também conhecida como **diferença de potencial**, ou **voltagem**, é a diferença de potencial elétrico entre dois pontos. 
-- Ela pode ser medida através de um **voltímetro** e sua unidade é o **Volt** (V)**. 
+- Ela pode ser medida através de um **voltímetro** e sua unidade é o **Volt** (V). 
 - Ela representa a tendência que uma carga tem para ir de um ponto a outro. Sem tensão elétrica, não há corrente.
 ## Corrente elétrica
 
@@ -34,9 +34,13 @@
 ## Lei de Ohm
 
 - Em termos gerais, a lei de Ohm afirma que a resistência ($R$) de um dispositivo condutor é dada pela razão da tensão elétrica ($V$) pela corrente ($A$):
-$$ R = \frac{V}{I}$$
+$$ 
+R = \frac{V}{I}
+$$
 - Podemos calcular a corrente de um circuito elétrico utilizando essa equivalência da seguinte forma:
-$$ I = \frac{V}{R} $$
+$$
+I = \frac{V}{R}
+$$
 
 
 ## Circuitos Eletrônicos
