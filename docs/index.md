@@ -362,7 +362,7 @@ c = a - b;  // a variável c receberá -5
 ```cpp
 float a = 5.5;
 float b = 6.6;
-int c = 0;
+float c = 0;
 c = a - b;  // a variável c receberá -1.1
 ```
 
@@ -380,7 +380,7 @@ c = a * b;  // a variável c receberá 50
 ```cpp
 float a = 5.5;
 float b = 6.6;
-int c = 0;
+float c = 0;
 c = a * b;  // a variável c receberá 36.3
 ```
 ### Divisão
@@ -398,7 +398,7 @@ c = a / b;  // a variável c receberá o valor 5
 ```cpp
 float a = 55.5;
 float b = 6.6;
-int c = 0;
+float c = 0;
 c = a / b;  // a variável c receberá o valor 8.409
 ```
 
@@ -646,11 +646,301 @@ void loop(){
 - Contudo, o pino PWM deve emitir valores de $8$ bits, variando de $0$ a $255$.
 - Utilizamos o comando `map` para fazer o mapeamento de um valor de 10-bits para um valor de 8-bits.
 
-**Exercício**
+**Exercícios**
 
-- Ligue o potenciômetro a um motor elétrico, fazendo ele girar de acordo com o valor do potenciômetro.
+1. Utilize três potenciômetros para regular a cor de um LED RGB. Cada potenciômetro ficará responsável por um componente de cor (Red, Green ou Blue).
+2. Ligue o potenciômetro a um motor elétrico, fazendo ele girar de acordo com o valor do potenciômetro.
 
 ## Estruturas condicionais
+
+- Imagine o seguinte problema: queremos projetar um circuito lê um inteiro da porta serial e acende um LED verde se ele for par e um vermelho se ele for ímpar.
+- O nosso código tem que ter a capacidade de executar instruções diferentes, dependendo se o número for par ou ímpar.
+- Através das estruturas condicionais, podemos controlar o fluxo de um programa.
+- Podemos decidir executar um pedaço de código ou não baseado em uma condição ser verdadeira ou falsa.
+- Para isso, utilizamos os operadores e conectivos lógicos.
+
+### Operadores lógicos
+
+- Expressões lógicas em `C++` só possuem dois tipos de valores: verdadeiro (1, HIGH) ou falso (0, LOW).
+- Para construir uma expressão lógica, utilizamos os operadores lógicos, que estão listados abaixo.
+
+| Operador |   Significado  |
+|:--------:|:--------------:|
+| ==       | Igualdade     |
+| !=       | Diferença      |
+| >        | Maior          |
+| >=       | Maior ou igual |
+| <        | Menor          |
+| <=       | Menor ou igual |
+
+#### Igualdade
+
+- O operador `==`compara os dois lados da igualdade e retorna verdadeiro se são iguais e falso caso contrário.
+- Não confunda o operador `==`de igualdade com o `=` para atribuir valores às variáveis.
+- Exemplos:
+```cpp
+9 == 9 // retorna 1 (verdadeiro)
+0 == 5 // retorna 0 (falso)
+2 + 3 == 1 + 4 // Retorna verdadeiro ou falso?
+```
+
+```cpp
+int a = 2; 
+int b = 3;
+int c = 1;
+int d = 4;
+a + c == b + d // Retorna verdadeiro ou falso?
+```
+
+#### Diferença
+
+- O operador `!=` é o operador de diferença. Ele compara os dois lados e retorna 1 se são **diferentes** e 0 caso contrário.
+- Exemplos:
+```cpp
+9 != 9 // retorna 0 (falso)
+0 != 5 // retorna 1 (verdadeiro)
+```
+
+```cpp
+int a = 2; 
+int b = 3;
+int c = 1;
+int d = 4;
+a + c == b + d // Retorna verdadeiro ou falso?
+```
+
+#### Maior
+
+- O operador `>`,quando aplicado sobre duas expressões, retorna 1 se o que está à esquerda do operador é maior do que está à direita e 0 caso contrário.
+- Exemplos:
+
+```cpp
+9 > 9 // retorna 0
+5 > 0 // retorna 1
+```
+
+#### Maior ou Igual
+
+- O operador `>=`, quando aplicado sobre duas expressões, retorna 1 se o que está a esquerda do operador é maior do que o que está à direita e 0 caso contrário.
+- Exemplos:
+```cpp
+9 >= 9 // retorna 1
+0 >= 5 // retorna 0;
+```
+#### Menor
+
+- O operador `<`, quando aplicado sobre duas expressões, retorna 1, se o que está à esquerda é menor do que o que está à direita.
+- Exemplos:
+```cpp
+9 < 9 // retorna 0
+0 < 5 // retorna 1
+```
+
+#### Menor ou igual
+
+- O operador `<=`, quando aplicado sobre duas expressões, retorna 1 se o que está à esquerda é menor ou igual do que o que está à direita.
+- Exemplos:
+```cpp
+9 <= 9 // retorna 1
+5 <= 0 // retorna 0
+```
+
+### Conectivos lógicos
+
+- Para compor expressões lógicas mais complexas, podemos juntar duas expressões lógicas através de um **conectivo** lógico.
+- São três os conectivos lógicos, o **NÃO** (`!`), o **E** (`&&`)e o **OU** (`||`).
+
+#### Conectivo NÃO
+
+- O conectivo NÃO (`!`) inverte o resultado de uma expressão lógica.
+- Se uma expressão `e` for verdadeira, `!e` será falsa. Se `e`for falsa, `!e` será verdadeira, conforme a tabela verdade abaixo.
+- É um operador **unário**, só atua sobre uma única expressão.
+
+| `e` | `!e` |
+| :--: | :--: |
+| 0 | 1 |
+| 1 | 0 |
+
+
+#### Conectivo E
+
+- O conectivo **E** (`&&`) é **binário**, atua sobre duas expressões `e1` e `e2`.
+- Retorna verdadeiro apenas quando as duas são verdadeiras.
+- Se pelo menos uma delas é falsa, `e1 && e2` devolve falso.
+
+| `e1` | `e2` | `e1 && e2` |
+| :--: | :--: | ---- |
+| 0 | 0 | 0 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 1 | 1 | 1 |
+
+
+#### Conectivo OU
+- O conectivo **OU** (`&&`) é **binário**, atua sobre duas expressões `e1` e `e2`.
+- Retorna verdadeiro apenas quando pelo menos uma das expressões é verdadeira.
+- Se as duas expressões são falsas, `e1 || e2` devolve falso.
+
+| `e1` | `e2` | `e1 \|\| e2` |
+| :--: | :--: | ---- |
+| 0 | 0 | 0 |
+| 0 | 1 | 1 |
+| 1 | 0 | 1 |
+| 1 | 1 | 1 |
+#### Exemplos
+
+- Uma expressão que avalia se uma variável `x`é par:
+```cpp
+x % 2 == 0
+```
+-  Uma expressão que avalia se uma variável `x`é ímpar: 
+```cpp
+!(x % 2 == 0)
+```
+-  Uma expressão que avalia se uma variável `x`é maior que 50 e menor que 100: 
+```cpp
+x > 50 && x < 100
+```
+
+-  Uma expressão que avalia se uma variável é divisível por 3, mas não é divisível por 5
+```cpp
+(x % 3 == 0) && (x % 5 != 0)
+```
+
+-  Uma expressão que avalia se uma variável `x`é ímpar: 
+```cpp
+!(x % 2 == 0)
+```
+### Se Então
+
+- A estrutura Se, então, verifica o valor de uma expressão e, **se ela for verdadeira**, executa o bloco de código relacionado à estrutura.
+- Sintaxe:
+```cpp
+if(condicao){
+	// inserir codigo a ser executado aqui
+	// caso a condição seja verdadeira
+}
+// O programa continua a executar a partir daqui
+```
+- O programa retoma o seu fluxo normal depois do bloco de código. 
+**Exemplo**
+
+- Tome o seguinte problema: o usuário deverá digitar um inteiro via comunicação serial e o circuito acenderá um LED vermelho por um segundo se o inteiro for par.
+
+![[Pasted image 20240117010901.png]]
+
+```cpp
+const int pino_led = 2;
+
+int le_inteiro(){
+    int x;
+    while(Serial.available() == 0)
+    {}
+    x = Serial.parseInt();
+    return x;
+}
+
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(pino_led,OUTPUT);
+}
+
+void loop()
+{
+  int x = le_inteiro();
+  digitalWrite(pino_led,LOW);
+  if(x % 2 == 0){
+    digitalWrite(pino_led,HIGH);
+    delay(1000);
+  }  
+}
+```
+
+**Exemplo**
+
+- Agora tome o seguinte problema: construir um circuito que que verifique se existe partículas de gás no ar e acione um alarme caso positivo.
+- Para isso precisaremos do sensor de gás e de um dispositivo piezoelétrico, que produzirá o som.
+![[Pasted image 20240117015708.png]]
+
+```cpp
+const int sensor_gas = A0;
+const int alarme = 2;
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(sensor_gas,INPUT);
+}
+
+void loop()
+{
+	int valor_gas = analogRead(sensor_gas);
+  	Serial.println("valor_gas: ");
+  	Serial.println(valor_gas);
+  	if(valor_gas >= 250){
+    	tone(alarme,400,3000);
+    }
+}
+```
+- O gás é ser lido através de um pino analógico. Já o alarme é acionado através de um pino digital.
+- Se o sensor acusa uma concentração de gás superior ou igual a 250, acionamos o alarme a uma frequência de 400Hz por 3 segundos através do comando `tone`.
+### Senão
+
+- E se quiséssemos que  o programa executasse uma lógica se a condição fosse verdadeira e outra se fosse falsa?
+- Para isso temos o **senão** .
+- Sintaxe:
+```cpp
+
+if(condicao){
+	// Comandos que serão executados se a condição for verdadeira
+}
+else{
+	// comandos que serão executados se a condição for falsa
+}
+// o programa continua aqui após executar um dos blocos de código acima.
+```
+
+**Exemplo**
+- Vamos tomar o problema anterior de verificar se um lido via comunicação serial é par. Mas desta vez acenderemos um LED verde se ele for par e um LED vermelho se ele for ímpar. Os LEDs deverão ficar ligados por 1 segundo.
+
+![[Pasted image 20240117021800.png]]
+
+```cpp
+const int pino_verde = 2;
+const int pino_vermelho = 4;
+
+int le_inteiro(){
+    int x;
+    while(Serial.available() == 0)
+    {}
+    x = Serial.parseInt();
+    return x;
+}
+
+void setup(){
+  Serial.begin(9600);
+  pinMode(pino_verde,OUTPUT);
+  pinMode(pino_vermelho,OUTPUT);
+}
+
+void loop(){
+  int x = le_inteiro();
+  if(x % 2 == 0){
+    	digitalWrite(pino_verde,HIGH);
+    	delay(1000);
+    	digitalWrite(pino_verde,LOW);
+  }
+  else{
+    	digitalWrite(pino_vermelho,HIGH);
+    	delay(1000);
+    	digitalWrite(pino_vermelho,LOW);
+  }
+}
+```
+### Exercícios
+1. Faça um circuito que mantenha um LED aceso quando um botão é pressionado e o apague quando ele é pressionado novamente.
+2. Elabore um circuito que ligue uma lâmpada caso o sensor de presença detecte movimento.
+3. Faça um circuito que receba um inteiro via comunicação serial e acenda um LED verde se ele for par e vermelho se ele for ímpar. Os LEDs devem ficar ligados por apenas 1 segundo.
 
 ## Estruturas de repetição
 
