@@ -1,0 +1,1475 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+        <link rel="next" href="blog/">
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="feed_rss_updated.xml">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+    
+    
+      
+        <title>Introdução a Programação com Arduino</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introducao-a-programacao-com-arduino" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Introdução a Programação com Arduino" class="md-header__button md-logo" aria-label="Introdução a Programação com Arduino" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Introdução a Programação com Arduino
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introdução à programação com Arduino
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Introdução a Programação com Arduino" class="md-nav__button md-logo" aria-label="Introdução a Programação com Arduino" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Introdução a Programação com Arduino
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introdução à programação com Arduino
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="introducao-a-programacao-com-arduino">Introdução à programação com Arduino<a class="headerlink" href="#introducao-a-programacao-com-arduino" title="Permanent link">&para;</a></h1>
+<h1 id="conceitos-basicos-de-eletronica">Conceitos básicos de eletrônica<a class="headerlink" href="#conceitos-basicos-de-eletronica" title="Permanent link">&para;</a></h1>
+<h2 id="tensao-eletrica">Tensão elétrica<a class="headerlink" href="#tensao-eletrica" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A tensão elétrica, também conhecida como <strong>diferença de potencial</strong>, ou <strong>voltagem</strong>, é a diferença de potencial elétrico entre dois pontos. </li>
+<li>Ela pode ser medida através de um <strong>voltímetro</strong> e sua unidade é o <strong>Volt</strong> (V). </li>
+<li>Ela representa a tendência que uma carga tem para ir de um ponto a outro. Sem tensão elétrica, não há corrente.</li>
+</ul>
+<h2 id="corrente-eletrica">Corrente elétrica<a class="headerlink" href="#corrente-eletrica" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A corrente elétrica é o fluxo de partículas com carga elétrica dentro de um condutor.</li>
+<li>Há corrente quando há diferença de potencial.</li>
+<li>Pode ser medida por um <strong>amperímetro</strong> e sua unidade é o <strong>Ampere</strong> (A).</li>
+<li>Sua intensidade é medida pela quantidade de carga que passa por um intervalo de tempo.</li>
+<li>Pode ser <strong>contínua</strong> ou <strong>alternada</strong>.</li>
+</ul>
+<h3 id="corrente-continua">Corrente contínua<a class="headerlink" href="#corrente-continua" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A corrente elétrica contínua mantém sua intensidade constante ao longo do tempo.</li>
+<li>Tipicamente produzida por pilhas, baterias e fontes. 
+<img alt="Pasted image 20240108221140.png" src="recursos/Pasted%20image%2020240108221140.png" width="300" /></li>
+</ul>
+<h3 id="corrente-alternada">Corrente alternada<a class="headerlink" href="#corrente-alternada" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sua intensidade varia ao longo do tempo.</li>
+<li>Rede elétrica doméstica funciona com base em corrente alternada.</li>
+</ul>
+<h2 id="resistencia">Resistência<a class="headerlink" href="#resistencia" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A resistência elétrica é a capacidade que um corpo qualquer de se opor à passagem de <strong>corrente elétrica</strong>.</li>
+<li>É medida em <strong>Ohms</strong> <span class="arithmatex">\((\Omega)\)</span></li>
+</ul>
+<h2 id="lei-de-ohm">Lei de Ohm<a class="headerlink" href="#lei-de-ohm" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Em termos gerais, a lei de Ohm afirma que a resistência (<span class="arithmatex">\(R\)</span>) de um dispositivo condutor é dada pela razão da tensão elétrica (<span class="arithmatex">\(V\)</span>) pela corrente (<span class="arithmatex">\(A\)</span>):</li>
+</ul>
+<p>$$ 
+R = \frac{V}{I}
+$$
+- Podemos calcular a corrente de um circuito elétrico utilizando essa equivalência da seguinte forma:</p>
+<div class="arithmatex">\[
+I = \frac{V}{R}
+\]</div>
+<h2 id="circuitos-eletronicos">Circuitos Eletrônicos<a class="headerlink" href="#circuitos-eletronicos" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Um circuito eletrônico possui uma série de componentes eletrônicos para cumprir uma tarefa.</li>
+<li>Normalmente circuitos eletrônicos obtém entradas, através de <strong>sensores</strong>, processam essas entradas, e produzem uma saída.</li>
+</ul>
+<h3 id="dispositivos-de-entrada">Dispositivos de entrada<a class="headerlink" href="#dispositivos-de-entrada" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Dispositivos de entrada, inputs, ou sensores, tomam sinais do mundo físico e os convertem em corrente ou voltagem.</li>
+<li>Exemplos de sensores:<ul>
+<li>Sensor de gás;</li>
+<li>Termômetro;</li>
+<li>Fotocélulas;</li>
+<li>Potenciômetros;</li>
+<li>Sensor de presença;</li>
+<li>Sensor de distância;</li>
+<li>Sensor de umidade;</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Pasted image 20240108222314.png" src="recursos/Pasted%20image%2020240108222314.png" width="200" /></p>
+<p><img alt="Pasted image 20240108222407.png" src="recursos/Pasted%20image%2020240108222407.png" width="200" /></p>
+<h3 id="dispositivos-de-saida">Dispositivos de saída<a class="headerlink" href="#dispositivos-de-saida" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Dispositivos de saída convertem tensão elétrica ou corrente em sinais físicos.</li>
+<li>Exemplos de dispositivos de saída:<ul>
+<li>Motores elétricos;</li>
+<li>LEDs;</li>
+<li>Alarmes sonoros;</li>
+<li>etc.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Pasted image 20240108222959.png" src="recursos/Pasted%20image%2020240108222959.png" width="200" />
+<img alt="Pasted image 20240108223023.png" src="recursos/Pasted%20image%2020240108223023.png" width="300" /></p>
+<h3 id="digital-vs-analogico">Digital vs analógico<a class="headerlink" href="#digital-vs-analogico" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sinais digitais podem assumir um número finito de valores. Normalmente, utiliza-se um sistema binário para sinais digitais.<ul>
+<li>Verdadeiro ou falso;</li>
+<li>0 ou 1;</li>
+<li>Com tensão ou sem tensão</li>
+</ul>
+</li>
+<li>Sinais analógicos por sua vez podem tomar uma infinidade de valores.</li>
+<li>Exemplos de dispositivos que lidam com sinais digitais:<ul>
+<li>Botões, LEDs, etc...</li>
+</ul>
+</li>
+<li>Exemplos de dispositivos que lidam com sinais analógicos:<ul>
+<li>Motores, potenciômetros, etc.</li>
+</ul>
+</li>
+</ul>
+<p><img alt="Pasted image 20240110193821.png" src="recursos/Pasted%20image%2020240110193821.png" /></p>
+<h3 id="modulacao-por-largura-de-pulso">Modulação por largura de pulso<a class="headerlink" href="#modulacao-por-largura-de-pulso" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Modulação por largura de pulso, ou PWM é uma técnica de modulação utilizada para obter resultados analógicos através de meios digitais.</li>
+<li>Uma onda quadrada é gerada alternando os sinais de 0 e 1 com uma determinada frequência.</li>
+<li>Quanto maior a frequência, maior o suposto valor analógico.
+<img alt="Pasted image 20240110193721.png" src="recursos/Pasted%20image%2020240110193721.png" /></li>
+</ul>
+<h3 id="microcontroladores">Microcontroladores<a class="headerlink" href="#microcontroladores" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Microcontroladores são utilizados para interpretar os sinais obtidos dos sensores e ativar determinadas ações nos dispositivos de saída.</li>
+<li>Eles executam a lógica do circuito.
+<img alt="Pasted image 20240108223205.png" src="recursos/Pasted%20image%2020240108223205.png" width="300" /></li>
+</ul>
+<h3 id="protoboard">Protoboard<a class="headerlink" href="#protoboard" title="Permanent link">&para;</a></h3>
+<ul>
+<li>As protoboards são placas reutilizáveis utilizadas para construção de circuitos eletrônicos sem solda.
+<img alt="Pasted image 20240108223850.png" src="recursos/Pasted%20image%2020240108223850.png" width="300" /></li>
+<li>As primeiras e as últimas duas linhas possuem conexões horizontais.</li>
+<li>As demais colunas são conectadas verticalmente.
+<img alt="Pasted image 20240108224019.png" src="recursos/Pasted%20image%2020240108224019.png" width="500" /></li>
+<li>Devemos nos atentar a essas conexões na hora de construir nossos protótipos.</li>
+</ul>
+<h3 id="resistores">Resistores<a class="headerlink" href="#resistores" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Resistores são dispositivos para limitar a passagem de corrente elétrica.</li>
+<li>Transforma energia elétrica em energia térmica (calor), fenômeno conhecido como <strong>efeito Joule</strong>.</li>
+<li>São muito utilizados em circuitos para que componentes não sejam <em>fritados</em>. </li>
+</ul>
+<p><img alt="Pasted image 20240108220237.png" src="recursos/Pasted%20image%2020240108220237.png" width="300" /></p>
+<p><img alt="Pasted image 20240108220447.png" src="recursos/Pasted%20image%2020240108220447.png" width="300" />
+- A resistência dos resistores normalmente é calculada de acordo com a seguinte tabela:</p>
+<p><img alt="Pasted image 20240110155430.png" src="recursos/Pasted%20image%2020240110155430.png" /></p>
+<h3 id="leds">LEDs<a class="headerlink" href="#leds" title="Permanent link">&para;</a></h3>
+<ul>
+<li>LEDs são dispositivos que emitem luz visível.</li>
+<li>Muito utilizados em produtos eletrônicos para sinalizar avisos, como erros ou se o produto está em <em>standby</em> ou não.</li>
+<li>Podem ser encontrados em tamanhos pequenos ou grandes.</li>
+<li>Possuem uma vida útil longa e um baixo consumo de energia.
+<img alt="Pasted image 20240108234431.png" src="recursos/Pasted%20image%2020240108234431.png" width="300" /></li>
+<li>Os LEDs possuem uma polaridade e, caso sejam conectados de forma invertida, não funcionarão corretamente.</li>
+<li>O ânodo corresponde ao polo positivo, enquanto o cátodo ao negativo.</li>
+<li>A "perna" maior corresponde ao ânodo (+), enquanto a menor corresponde ao cátodo.</li>
+<li>Outra forma de descobrir a polaridade é observar a base do LED. O lado que possuir um lado achatado, em vez de arredondado, é o cátodo (-). </li>
+</ul>
+<p><img alt="Pasted image 20240108234907.png" src="recursos/Pasted%20image%2020240108234907.png" width="700" />
+- LEDs também podem possuir componentes RGB  (Red, Green and Blue) e reproduzir várias cores. 
+- Dentro da mesma estrutura existe um LED vermelho, um verde e um azul que, quando combinados, podem reproduzir milhares de cores diferentes.</p>
+<h3 id="botoes">Botões<a class="headerlink" href="#botoes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Botões são utilizados para ativar, ou desativar alguma função do circuito. </li>
+<li>Atua como uma espécie de interruptor, ativando, ou desativando uma determinada função.</li>
+<li>Tipicamente utilizados como dispositivos de entrada.</li>
+</ul>
+<p><img alt="Pasted image 20240108235304.png" src="recursos/Pasted%20image%2020240108235304.png" width="300" /></p>
+<h3 id="sensor-de-luminosidade">Sensor de luminosidade<a class="headerlink" href="#sensor-de-luminosidade" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sensores de luminosidade (LDRs) são resistências de valor variável.</li>
+<li>A resistência varia de maneira inversamente proporcional à incidência de luz.</li>
+<li>Baixa luminosidade -&gt; alta resistência</li>
+<li>Alta luminosidade -&gt; baixa resistência</li>
+</ul>
+<p><img alt="Pasted image 20240110161705.png" src="recursos/Pasted%20image%2020240110161705.png" width="300" /></p>
+<h3 id="sensores-piezoeletricos">Sensores piezoelétricos<a class="headerlink" href="#sensores-piezoeletricos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Sensores piezoelétricos são capazes de converter mudanças de pressão em sinais elétricos ou vice-versa.</li>
+<li>Podem ser utilizadas para converter corrente em som, por exemplo, ou vice-versa.</li>
+</ul>
+<p><img alt="Pasted image 20240110162101.png" src="recursos/Pasted%20image%2020240110162101.png" width="300" /></p>
+<h3 id="potenciometros">Potenciômetros<a class="headerlink" href="#potenciometros" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Potenciômetros são resistências de valor variável. </li>
+<li>Pode-se regular a intensidade de corrente ou voltagem que passa por um potenciômetro.</li>
+<li>Um exemplo clássico de potenciômetro é o botão de volume em um rádio ou uma guitarra.</li>
+</ul>
+<p><img alt="Pasted image 20240110155710.png" src="recursos/Pasted%20image%2020240110155710.png" width="300" /></p>
+<h3 id="display-lcd">Display LCD<a class="headerlink" href="#display-lcd" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Um display LCD é um painel para exibir informações como textos, imagens ou vídeos por meio da eletrônica.</li>
+<li>Tipicamente utilizados como dispositivos de saída.
+<img alt="Pasted image 20240110162402.png" src="recursos/Pasted%20image%2020240110162402.png" width="200" /></li>
+</ul>
+<h3 id="motores-cc">Motores CC<a class="headerlink" href="#motores-cc" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Um motor de corrente contínua (CC) converte energia elétrica em energia mecânica.</li>
+<li>A velocidade dele é facilmente controlável.</li>
+<li>Encontrado em brinquedos, robôs, etc.</li>
+</ul>
+<p><img alt="Pasted image 20240110162811.png" src="recursos/Pasted%20image%2020240110162811.png" width="300" /></p>
+<h2 id="arduino">Arduino<a class="headerlink" href="#arduino" title="Permanent link">&para;</a></h2>
+<ul>
+<li>O projeto Arduino foi criado com intuito de oferecer aos estudantes a possibilidade de construir projetos de circuitos integrados de maneira barata.</li>
+<li>Neste curso utilizaremos o microcontrolador Arduino Uno R3 para desenvolvimento dos projetos.</li>
+</ul>
+<h3 id="disposicao-de-pinos">Disposição de pinos<a class="headerlink" href="#disposicao-de-pinos" title="Permanent link">&para;</a></h3>
+<p><img alt="Pasted image 20240110162940.png" src="recursos/Pasted%20image%2020240110162940.png" width="700" /></p>
+<p><img alt="Pasted image 20240110164629.png" src="recursos/Pasted%20image%2020240110164629.png" /></p>
+<h4 id="entrada-e-saida">Entrada e saída<a class="headerlink" href="#entrada-e-saida" title="Permanent link">&para;</a></h4>
+<ul>
+<li>O Arduino possui diversas entradas e saídas digitais e analógicas. Ao todo são:<ul>
+<li>14 pinos digitais.</li>
+<li>6 pinos analógicos.</li>
+</ul>
+</li>
+<li>Os pinos analógicos são utilizados para captar dados dos sensores analógicos, como medidores de umidade ou temperatura e convertê-los em um sinal digital de 10 bits, portanto os valores obtíveis desses pinos variam de 0 a 1023.</li>
+<li>Os pinos digitais, por outro lado, podem assumir valores de 0 ou 1 (HIGH ou LOW), que representam tensão 0V ou 5V. Podem ser utilizados tanto para entrada quanto para saída.</li>
+</ul>
+<h4 id="alimentacao">Alimentação<a class="headerlink" href="#alimentacao" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Existem pinos de 5V, 3.3V e terra, para prover alimentação aos componentes eletrônicos.</li>
+<li>O Arduino, por sua vez, pode ser alimentado:<ul>
+<li>Através de um cabo USB AB.</li>
+<li>Através do conector fêmea (12 no diagrama).</li>
+<li>Através do pino <span class="arithmatex">\(V_{in}\)</span> e de uma bateria.</li>
+</ul>
+</li>
+</ul>
+<h4 id="pwm">PWM<a class="headerlink" href="#pwm" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Através dos pinos 3, 5, 6, 9, 10 e 11, é possível aplicar a técnica de PWM.</li>
+</ul>
+<h3 id="comunicacao-serial">Comunicação serial<a class="headerlink" href="#comunicacao-serial" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A comunicação serial do Arduino é uma interface que permite o envio de informações um bit de cada vez (serialmente).</li>
+<li>Permite que nos comuniquemos com um computador.</li>
+<li>Tudo por meio da <strong>porta serial</strong>.</li>
+</ul>
+<h2 id="tinkercad">Tinkercad<a class="headerlink" href="#tinkercad" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A plataforma Thinkercad permite prototipar circuitos digitais com o microcontrolador Arduino R3.</li>
+<li>É possível desenhar circuitos com lógicas complexas sem necessariamente ter o hardware em mãos.</li>
+<li>Muito útil para aprender programação e introdução a eletrônica.</li>
+<li>A plataforma pode ser acessada em <a href="https://www.tinkercad.com/">https://www.tinkercad.com/</a></li>
+</ul>
+<h3 id="criacao-de-prototipos">Criação de protótipos<a class="headerlink" href="#criacao-de-prototipos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Para criar um protótipo, basta clicar em Designs -&gt; Create -&gt; Circuit.
+![Criação de um protótipo][recursos/criacao-prototipo.gif]</li>
+</ul>
+<h1 id="programacao">Programação<a class="headerlink" href="#programacao" title="Permanent link">&para;</a></h1>
+<ul>
+<li>O Arduino utiliza um dialeto da linguagem de programação <code>C++</code> para controlar os dispositivos.</li>
+<li>Programas são escritos diretamente em um arquivo texto, compilados e transferidos para a execução no Arduino.</li>
+<li>Para começar a entender programas em Arduino, é necessário entender que um programa possui dois blocos de código, chamados de funções, básicos, <code>setup</code>e <code>loop</code>.<ul>
+<li><code>setup</code>: contém todas as instruções que serão executadas antes do <code>loop</code>.</li>
+<li><code>loop</code>: as instruções contidas aqui serão executadas indefinidamente de maneira cíclica. Afinal, um microcontrolador não deveria parar a sua execução. </li>
+</ul>
+</li>
+<li>Exemplo básico de programa em Arduino que pisca um LED de <span class="arithmatex">\(1000\)</span> em <span class="arithmatex">\(1000\)</span> milissegundos.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pino_led</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w"> </span><span class="c1">// pino 13 será utilizado para ligar e desligar o LED</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pino_led</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pino_led</span><span class="p">,</span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pino_led</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>
+<p>O programa faz o seguinte:</p>
+<ul>
+<li>Em <code>setup</code>, atribuímos ao pino <span class="arithmatex">\(13\)</span> a variável <code>led_pin</code> no modo de saída (OUTPUT). Ou seja, esse pino será utilizado para enviar sinais a um dispositivo de saída.</li>
+<li>Em <code>loop</code>: <ul>
+<li>Enviamos o sinal <code>HIGH</code> a partir do pino <span class="arithmatex">\(13\)</span>.</li>
+<li>Esperamos um segundo através da instrução <code>delay(1000)</code>;</li>
+<li>Enviamos o sinal <code>LOW</code>a partir do pino <span class="arithmatex">\(13\)</span>.</li>
+<li>Esperamos mais um segundo.</li>
+</ul>
+</li>
+<li>Após a última instrução de <code>loop</code>, voltamos ao início (realmente é um <code>loop</code>).</li>
+</ul>
+</li>
+<li>
+<p>O circuito resultante é o seguinte:
+<img alt="pisca-led" src="recursos/pisca-led.gif" /></p>
+</li>
+</ul>
+<h2 id="comentarios">Comentários<a class="headerlink" href="#comentarios" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Comentários permitem que o código seja documento para facilitar a sua leitura.</li>
+<li>São instruções completamente ignoradas pelo compilador, só fazem sentido ao programador.</li>
+<li>São muito úteis para que outras pessoas (e até você mesmo) entendam o seu código.</li>
+<li>Comentários são feitos após colocar texto após os caracteres <code>//</code></li>
+<li>Exemplo:
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pino_led</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">13</span><span class="p">;</span><span class="w"> </span><span class="c1">// pino 13 será utilizado para ligar e desligar o LED</span>
+</code></pre></div></li>
+</ul>
+<h2 id="variaveis">Variáveis<a class="headerlink" href="#variaveis" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Variáveis são nomes para endereços de memória.</li>
+<li>Podemos armazenar valores em memórias através do nome de uma variável.</li>
+<li>Variáveis podem assumir diferentes tipos, como caracteres, inteiros, reais, entre outros.</li>
+</ul>
+<p><img alt="Pasted image 20240111153857.png" src="recursos/Pasted%20image%2020240111153857.png" width="500" /></p>
+<h3 id="tipos-de-variaveis">Tipos de variáveis<a class="headerlink" href="#tipos-de-variaveis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Trabalharemos com os seguintes tipos de variável nesse curso:<ul>
+<li><code>char</code>: caractere, armazena um caractere. </li>
+<li><code>bool</code>: booleano, armazena <code>true</code> (verdadeiro) ou <code>false</code> (falso).</li>
+<li><code>byte</code>: armazena inteiros sem sinal de 8-bits na faixa <span class="arithmatex">\([0,255]\)</span>.</li>
+<li><code>int</code>: armazena inteiros de 16-bits na faixa <span class="arithmatex">\([-32768,32767]\)</span>.</li>
+<li><code>float</code>: armazena números reais usando representação em ponto flutuante de precisão simples da ordem de <span class="arithmatex">\(-10^{38}\)</span> à <span class="arithmatex">\(10^{38}\)</span>.</li>
+<li><code>double</code>: armazena números reais usando representação em ponto flutuante de precisão dupla.</li>
+</ul>
+</li>
+<li>Variáveis precisam ser declaradas para serem utilizadas. Para declarar variáveis utilizamos a seguinte sintaxe:<ul>
+<li><code>&lt;tipo&gt; nome_da_variavel</code>; </li>
+</ul>
+</li>
+<li>Exemplos:<ul>
+<li><code>int x;</code></li>
+<li><code>byte pino_led</code>;</li>
+<li><code>double nota;</code></li>
+<li><code>bool condicao</code>;</li>
+</ul>
+</li>
+<li>É importante que os nomes das variáveis não possuam espaços e nem caracteres especiais.</li>
+<li>Variáveis de mesmo nome também não podem ser declaradas duas vezes no mesmo escopo.</li>
+<li>Variáveis com o modificador <code>const</code> são utilizadas para representar constantes. Seu valor não pode ser alterado.</li>
+</ul>
+<h2 id="operadores-aritmeticos">Operadores aritméticos<a class="headerlink" href="#operadores-aritmeticos" title="Permanent link">&para;</a></h2>
+<ul>
+<li>É possível fazer operações aritméticas entre variáveis utilizando o Arduino.</li>
+<li>As seguintes operações são suportadas:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operador</th>
+<th style="text-align: center;">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">=</td>
+<td style="text-align: center;">Atribuição</td>
+</tr>
+<tr>
+<td style="text-align: center;">+</td>
+<td style="text-align: center;">Soma</td>
+</tr>
+<tr>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">Subtração</td>
+</tr>
+<tr>
+<td style="text-align: center;">*</td>
+<td style="text-align: center;">Multiplicação</td>
+</tr>
+<tr>
+<td style="text-align: center;">/</td>
+<td style="text-align: center;">Divisão</td>
+</tr>
+<tr>
+<td style="text-align: center;">%</td>
+<td style="text-align: center;">Resto</td>
+</tr>
+</tbody>
+</table>
+<h3 id="atribuicao">Atribuição<a class="headerlink" href="#atribuicao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Permite que variáveis assumam valores ou resultados de expressões aritméticas.</li>
+<li>Exemplos:
+<div class="highlight"><pre><span></span><code><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// a recebe o valor 5</span>
+<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="p">;</span><span class="w"> </span><span class="c1">// a recebe o valor da soma das variáveis b e c.</span>
+</code></pre></div></li>
+</ul>
+<h3 id="soma">Soma<a class="headerlink" href="#soma" title="Permanent link">&para;</a></h3>
+<ul>
+<li>O operador <code>+</code> realiza soma de valores e variáveis.</li>
+<li>Exemplo:
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// a variável c receberá o valor 15</span>
+</code></pre></div></li>
+</ul>
+<h3 id="subtracao">Subtração<a class="headerlink" href="#subtracao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>O operador <code>-</code>realiza a subtração de valores e variáveis.</li>
+<li>Exemplos:
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// a variável c receberá -5</span>
+</code></pre></div></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.5</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.6</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// a variável c receberá -1.1</span>
+</code></pre></div>
+<h3 id="multiplicacao">Multiplicação<a class="headerlink" href="#multiplicacao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>O operador <code>*</code> realiza a multiplicação entre valores e variáveis.</li>
+<li>Exemplos:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// a variável c receberá 50</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5.5</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.6</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// a variável c receberá 36.3</span>
+</code></pre></div>
+<h3 id="divisao">Divisão<a class="headerlink" href="#divisao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>O operador <code>/</code> realiza a divisão entre valores e variáveis.</li>
+<li>O denominador deve ser diferente de <span class="arithmatex">\(0\)</span> para evitar erros.</li>
+<li>Exemplos:
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// a variável c receberá o valor 5</span>
+</code></pre></div></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">55.5</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6.6</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w">  </span><span class="c1">// a variável c receberá o valor 8.409</span>
+</code></pre></div>
+<ul>
+<li><strong>Importante</strong>: caso o numerador e o denominador sejam <em>inteiros</em> , será efetuada uma divisão inteira, isto é, a parte fracionária é desprezada.</li>
+<li>Exemplo: <code>5/2 = 2</code>.</li>
+<li>Use isso ao seu favor.</li>
+</ul>
+<h3 id="resto">Resto<a class="headerlink" href="#resto" title="Permanent link">&para;</a></h3>
+<ul>
+<li>O operador <code>%</code> é capaz de extrair o resto da divisão de dois números.</li>
+<li>Só é aplicável quando os operandos são inteiros.
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// x recebe 2</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// x recebe 4</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// x recebe 0</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w">  </span><span class="c1">// x recebe 4</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-4</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span><span class="w"> </span><span class="c1">// x recebe -4</span>
+<span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">-5</span><span class="p">;</span><span class="w"> </span><span class="c1">// x recebe 4</span>
+</code></pre></div></li>
+</ul>
+<h2 id="comunicacao-serial_1">Comunicação serial<a class="headerlink" href="#comunicacao-serial_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Através da comunicação serial é possível obter dados e enviar dados.</li>
+<li>Para utilizar a comunicação serial, é necessário inicializá-la via <code>setup</code>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span><span class="w"> </span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+<h3 id="saida">Saída<a class="headerlink" href="#saida" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Para enviar o valor de uma variável <code>x</code>à porta serial, usamos o comando <code>Serial.print(x)</code>.</li>
+<li>Se quisermos pular uma linha após a impressão, podemos usar o comando <code>Serial.println(x)</code>.</li>
+</ul>
+<h3 id="leitura-de-inteiros">Leitura de inteiros<a class="headerlink" href="#leitura-de-inteiros" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Para ler inteiros via comunicação serial, precisamos de três pequenos passos.</li>
+<li>Iniciar a comunicação serial no <code>setup</code></li>
+<li>Criar a função ler_inteiro abaixo:
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">le_inteiro</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">parseInt</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Chamar a função `le_inteiro() quando apropriado.</li>
+</ul>
+<p><strong>Exemplo</strong></p>
+<ul>
+<li>O programa abaixo lê dois inteiros e imprime a soma deles na comunicação serial.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">le_inteiro</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">parseInt</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">le_inteiro</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">le_inteiro</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="leitura-de-numeros-reais">Leitura de números reais<a class="headerlink" href="#leitura-de-numeros-reais" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>O processo é muito parecido ao dos números inteiros, mas com a função <code>le_real</code> abaixo.
+<strong>Exemplo</strong></p>
+</li>
+<li>
+<p>O programa abaixo lê dois números reais e imprime a soma deles na comunicação serial.
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">le_inteiro</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">parseInt</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">float</span><span class="w"> </span><span class="nf">le_real</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">parseFloat</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(){</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">le_real</span><span class="p">();</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">le_real</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="exercicios">Exercícios<a class="headerlink" href="#exercicios" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Crie um programa que leia três números reais  e imprima a média aritmética deles via comunicação serial.<ul>
+<li>Por exemplo, se os números lidos forem <span class="arithmatex">\(5.5\)</span>, <span class="arithmatex">\(6.0\)</span> e <span class="arithmatex">\(7.5\)</span>, a média que será impressa é <span class="arithmatex">\(6.33333\)</span></li>
+</ul>
+</li>
+<li>Leia um número real, contendo o valor de uma temperatura em Fahrenheit, converta para Celsius, e imprima o resultado via comunicação serial. Por exemplo:<ul>
+<li><span class="arithmatex">\(32\)</span> Fahrenheits é igual a <span class="arithmatex">\(0\)</span> Celsius.</li>
+<li><span class="arithmatex">\(50\)</span> Fahrenheits é igual a -10 Celsius</li>
+<li><span class="arithmatex">\(100\)</span> Fahrenheit é igual a <span class="arithmatex">\(37.7778\)</span> Celsius.</li>
+</ul>
+</li>
+<li>Leia um número real, contendo o valor de uma temperatura em Celsius, converta para Fahrenheit, e imprima o resultado via comunicação serial.</li>
+<li>Crie um programa que leia um inteiro, representando uma quantidade em segundos, converta e imprima essa quantidade no formato hora, minuto e segundo, via comunicação serial. Por exemplo:<ul>
+<li><span class="arithmatex">\(39323\)</span> segundos equivale à <span class="arithmatex">\(10\)</span> horas, <span class="arithmatex">\(55\)</span> minutos e <span class="arithmatex">\(23\)</span> segundos.</li>
+</ul>
+</li>
+<li>Crie um programa que leia três números reais indicando o comprimento dos lados de um triângulo, calcule a sua área, e imprima o resultado via comunicação serial.<ul>
+<li>Utilize a fórmula de Heron para calcular a área do triângulo: <span class="arithmatex">\(\sqrt{p \cdot (p-a) \cdot (p-b) \cdot (p-c)}\)</span> , em que <span class="arithmatex">\(p = \frac{a+b+c}{2}\)</span> .</li>
+<li>A função <code>sqrt</code> pode ser utilizada para calcular a raiz de um número. Exemplo <code>sqrt(2)</code> <span class="arithmatex">\(= 1.4142135623\ldots\)</span>  </li>
+</ul>
+</li>
+</ol>
+<h2 id="entrada-e-saida_1">Entrada e saída<a class="headerlink" href="#entrada-e-saida_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Através dos pinos do Arduino é possível ler e enviar sinais digitais e analógicos.</li>
+<li>Veremos agora as funções que trabalham com entrada e saída digital e analógica.</li>
+</ul>
+<h4 id="atribuicao-dos-pinos">Atribuição dos pinos<a class="headerlink" href="#atribuicao-dos-pinos" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Antes de poder usar os pinos, é necessário atribuir a função deles.</li>
+<li>Para isso, usamos a função <code>pinMode()</code> que deve ser colocada no <code>setup()</code>.</li>
+<li>Ela recebe o número do pino e se ele será um pino de entrada ou saída. Exemplo:
+<div class="highlight"><pre><span></span><code><span class="n">pinMode</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+</code></pre></div></li>
+<li>No exemplo acima, o pino <span class="arithmatex">\(9\)</span> é configurado como saída, isto é, ele enviará um sinal para um dispositivo.</li>
+<li>Pinos de entrada recebem sinais dos sensores enquanto pinos de saída enviam dados para os dispositivos de saída.</li>
+<li>Os pinos de <span class="arithmatex">\(0\)</span> a <span class="arithmatex">\(13\)</span> podem ser utilizados tando para entrada <strong>digital</strong> (INPUT) como saída <strong>digital</strong> (OUTPUT).</li>
+<li>Os pinos <span class="arithmatex">\(3\)</span>, <span class="arithmatex">\(5\)</span>, <span class="arithmatex">\(6\)</span>, <span class="arithmatex">\(9\)</span>, <span class="arithmatex">\(10\)</span> e <span class="arithmatex">\(11\)</span> são PWM, logo, podem enviar sinais analógicos modulados a partir da técnica de PWM para dispositivos de saída analógicos.</li>
+<li>Os pinos <span class="arithmatex">\(A0\)</span>, <span class="arithmatex">\(A1\)</span>, <span class="arithmatex">\(A2\)</span>, <span class="arithmatex">\(A3\)</span>, <span class="arithmatex">\(A4\)</span> e <span class="arithmatex">\(A5\)</span> recebem apenas entradas analógicas.</li>
+</ul>
+<h3 id="entrada-e-saida-digital">Entrada e saída digital<a class="headerlink" href="#entrada-e-saida-digital" title="Permanent link">&para;</a></h3>
+<h4 id="entrada-digital">Entrada digital<a class="headerlink" href="#entrada-digital" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A função <code>digitalRead()</code> lê o valor de um pino digital e devolve <code>HIGH</code> (1) ou <code>LOW</code> (0), de acordo com a lógica Booleana. O exemplo abaixo diz se um botão foi pressionado ou não.</li>
+</ul>
+<p><img alt="recursos/le-botao.png" src="recursos/le-botao.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pino_botao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pino_botao</span><span class="p">,</span><span class="w"> </span><span class="n">INPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor_botao</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">digitalRead</span><span class="p">(</span><span class="n">pino_botao</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;O valor do botao e: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">valor_botao</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Se o botão não for pressionado, não há conexão entre os dois lados do botão, realizando uma leitura <code>LOW</code>.</li>
+<li>Quando o botão é pressionado, o circuito fecha, fazendo a leitura do valor <code>HIGH</code>.</li>
+</ul>
+<p><strong>Exercício</strong></p>
+<ul>
+<li>Modifique o circuito anterior para ligar um LED quando o botão for pressionado.</li>
+</ul>
+<h4 id="saida-digital">Saída digital<a class="headerlink" href="#saida-digital" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A função <code>digitalWrite()</code> escreve um valor <code>HIGH</code> ou <code>LOW</code>a partir de um pino digital.</li>
+<li>Exemplo: <code>digitalWrite(3,HIGH)</code> escreve o valor <code>HIGH</code> a partir do pino <code>3</code>.</li>
+<li>O exemplo inicial do pisca-led ilustra a função <code>digitalWrite</code>.</li>
+</ul>
+<p><strong>Exercício</strong></p>
+<ul>
+<li>Projete um circuito que lida com um pequeno semáforo. Ele deverá possui três LEDs das cores vermelho, amarelo e verde. O LED vermelho deverá ficar ligado por 30 segundos, o amarelo por 3 e o verde por 10. O LED verde só liga após o vermelho desligar, o amarelo só liga após o verde desligar e o vermelho só liga após o amarelo desligar. O primeiro LED a ser ligado deverá ser o vermelho.</li>
+</ul>
+<h3 id="entrada-analogica">Entrada analógica<a class="headerlink" href="#entrada-analogica" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A entrada analógica é realizada nos pinos de <span class="arithmatex">\(A0\)</span> a <span class="arithmatex">\(A5\)</span>. </li>
+<li>Os valores lidos possuem <span class="arithmatex">\(10\)</span> bits, logo, estão entre <span class="arithmatex">\(0\)</span> e <span class="arithmatex">\(1023\)</span>.</li>
+<li>O circuito abaixo realiza a leitura a partir de um potenciômetro e imprime o valor lido via comunicação serial.</li>
+</ul>
+<p><img alt="leitura-analogica-potenciometro.png" src="recursos/leitura-analogica-potenciometro.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pino_potenciometro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A5</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pino_potenciometro</span><span class="p">,</span><span class="n">INPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor_potenciometro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">pino_potenciometro</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Valor lido: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">valor_potenciometro</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Exercícios</strong></p>
+<ul>
+<li>Converta a saída do potenciômetro para a voltagem correspondente, isto é, de <span class="arithmatex">\(0\)</span>V a <span class="arithmatex">\(5\)</span>V.</li>
+</ul>
+<h3 id="saida-analogica">Saída analógica<a class="headerlink" href="#saida-analogica" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A saída analógica é feita através dos pinos digitais PWM.</li>
+<li>O comando a ser utilizado é o <code>analogWrite</code>.</li>
+<li>O circuito abaixo acende um LED de acordo com o valor do potenciômetro, quanto maior o valor da saída do potenciômetro, mais brilho terá o LED.
+<img alt="escrita-analogica-potenciometro.png" src="recursos/escrita-analogica-potenciometro.png" /></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pino_potenciometro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A5</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pino_pwm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pino_potenciometro</span><span class="p">,</span><span class="n">INPUT</span><span class="p">);</span>
+<span class="w">    </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pino_pwm</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor_potenciometro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">pino_potenciometro</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Valor lido: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">valor_potenciometro</span><span class="p">);</span>
+<span class="w">    </span><span class="n">valor_potenciometro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">map</span><span class="p">(</span><span class="n">valor_potenciometro</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1023</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;Valor convertido: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">valor_potenciometro</span><span class="p">);</span>
+<span class="w">    </span><span class="n">analogWrite</span><span class="p">(</span><span class="n">pino_pwm</span><span class="p">,</span><span class="n">valor_potenciometro</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>O valor analógico lido tem <span class="arithmatex">\(10\)</span> bits, portanto varia de <span class="arithmatex">\(0\)</span> a <span class="arithmatex">\(1023\)</span>.</li>
+<li>Contudo, o pino PWM deve emitir valores de <span class="arithmatex">\(8\)</span> bits, variando de <span class="arithmatex">\(0\)</span> a <span class="arithmatex">\(255\)</span>.</li>
+<li>Utilizamos o comando <code>map</code> para fazer o mapeamento de um valor de 10-bits para um valor de 8-bits.</li>
+</ul>
+<p><strong>Exercícios</strong></p>
+<ol>
+<li>Utilize três potenciômetros para regular a cor de um LED RGB. Cada potenciômetro ficará responsável por um componente de cor (Red, Green ou Blue).</li>
+<li>Ligue o potenciômetro a um motor elétrico, fazendo ele girar de acordo com o valor do potenciômetro.</li>
+</ol>
+<h2 id="estruturas-condicionais">Estruturas condicionais<a class="headerlink" href="#estruturas-condicionais" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Imagine o seguinte problema: queremos projetar um circuito lê um inteiro da porta serial e acende um LED verde se ele for par e um vermelho se ele for ímpar.</li>
+<li>O nosso código tem que ter a capacidade de executar instruções diferentes, dependendo se o número for par ou ímpar.</li>
+<li>Através das estruturas condicionais, podemos controlar o fluxo de um programa.</li>
+<li>Podemos decidir executar um pedaço de código ou não baseado em uma condição ser verdadeira ou falsa.</li>
+<li>Para isso, utilizamos os operadores e conectivos lógicos.</li>
+</ul>
+<h3 id="operadores-logicos">Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Expressões lógicas em <code>C++</code> só possuem dois tipos de valores: verdadeiro (1, HIGH) ou falso (0, LOW).</li>
+<li>Para construir uma expressão lógica, utilizamos os operadores lógicos, que estão listados abaixo.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Operador</th>
+<th style="text-align: center;">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">==</td>
+<td style="text-align: center;">Igualdade</td>
+</tr>
+<tr>
+<td style="text-align: center;">!=</td>
+<td style="text-align: center;">Diferença</td>
+</tr>
+<tr>
+<td style="text-align: center;">&gt;</td>
+<td style="text-align: center;">Maior</td>
+</tr>
+<tr>
+<td style="text-align: center;">&gt;=</td>
+<td style="text-align: center;">Maior ou igual</td>
+</tr>
+<tr>
+<td style="text-align: center;">&lt;</td>
+<td style="text-align: center;">Menor</td>
+</tr>
+<tr>
+<td style="text-align: center;">&lt;=</td>
+<td style="text-align: center;">Menor ou igual</td>
+</tr>
+</tbody>
+</table>
+<h4 id="igualdade">Igualdade<a class="headerlink" href="#igualdade" title="Permanent link">&para;</a></h4>
+<ul>
+<li>O operador <code>==</code>compara os dois lados da igualdade e retorna verdadeiro se são iguais e falso caso contrário.</li>
+<li>Não confunda o operador <code>==</code>de igualdade com o <code>=</code> para atribuir valores às variáveis.</li>
+<li>Exemplos:
+<div class="highlight"><pre><span></span><code><span class="mi">9</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="c1">// retorna 1 (verdadeiro)</span>
+<span class="mi">0</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="c1">// retorna 0 (falso)</span>
+<span class="mi">2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="c1">// Retorna verdadeiro ou falso?</span>
+</code></pre></div></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="c1">// Retorna verdadeiro ou falso?</span>
+</code></pre></div>
+<h4 id="diferenca">Diferença<a class="headerlink" href="#diferenca" title="Permanent link">&para;</a></h4>
+<ul>
+<li>O operador <code>!=</code> é o operador de diferença. Ele compara os dois lados e retorna 1 se são <strong>diferentes</strong> e 0 caso contrário.</li>
+<li>Exemplos:
+<div class="highlight"><pre><span></span><code><span class="mi">9</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="c1">// retorna 0 (falso)</span>
+<span class="mi">0</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="c1">// retorna 1 (verdadeiro)</span>
+</code></pre></div></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w"> </span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="c1">// Retorna verdadeiro ou falso?</span>
+</code></pre></div>
+<h4 id="maior">Maior<a class="headerlink" href="#maior" title="Permanent link">&para;</a></h4>
+<ul>
+<li>O operador <code>&gt;</code>,quando aplicado sobre duas expressões, retorna 1 se o que está à esquerda do operador é maior do que está à direita e 0 caso contrário.</li>
+<li>Exemplos:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="mi">9</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="c1">// retorna 0</span>
+<span class="mi">5</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="c1">// retorna 1</span>
+</code></pre></div>
+<h4 id="maior-ou-igual">Maior ou Igual<a class="headerlink" href="#maior-ou-igual" title="Permanent link">&para;</a></h4>
+<ul>
+<li>O operador <code>&gt;=</code>, quando aplicado sobre duas expressões, retorna 1 se o que está a esquerda do operador é maior do que o que está à direita e 0 caso contrário.</li>
+<li>Exemplos:
+<div class="highlight"><pre><span></span><code><span class="mi">9</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="c1">// retorna 1</span>
+<span class="mi">0</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="c1">// retorna 0;</span>
+</code></pre></div></li>
+</ul>
+<h4 id="menor">Menor<a class="headerlink" href="#menor" title="Permanent link">&para;</a></h4>
+<ul>
+<li>O operador <code>&lt;</code>, quando aplicado sobre duas expressões, retorna 1, se o que está à esquerda é menor do que o que está à direita.</li>
+<li>Exemplos:
+<div class="highlight"><pre><span></span><code><span class="mi">9</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="c1">// retorna 0</span>
+<span class="mi">0</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="c1">// retorna 1</span>
+</code></pre></div></li>
+</ul>
+<h4 id="menor-ou-igual">Menor ou igual<a class="headerlink" href="#menor-ou-igual" title="Permanent link">&para;</a></h4>
+<ul>
+<li>O operador <code>&lt;=</code>, quando aplicado sobre duas expressões, retorna 1 se o que está à esquerda é menor ou igual do que o que está à direita.</li>
+<li>Exemplos:
+<div class="highlight"><pre><span></span><code><span class="mi">9</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="c1">// retorna 1</span>
+<span class="mi">5</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="c1">// retorna 0</span>
+</code></pre></div></li>
+</ul>
+<h3 id="conectivos-logicos">Conectivos lógicos<a class="headerlink" href="#conectivos-logicos" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Para compor expressões lógicas mais complexas, podemos juntar duas expressões lógicas através de um <strong>conectivo</strong> lógico.</li>
+<li>São três os conectivos lógicos, o <strong>NÃO</strong> (<code>!</code>), o <strong>E</strong> (<code>&amp;&amp;</code>)e o <strong>OU</strong> (<code>||</code>).</li>
+</ul>
+<h4 id="conectivo-nao">Conectivo NÃO<a class="headerlink" href="#conectivo-nao" title="Permanent link">&para;</a></h4>
+<ul>
+<li>O conectivo NÃO (<code>!</code>) inverte o resultado de uma expressão lógica.</li>
+<li>Se uma expressão <code>e</code> for verdadeira, <code>!e</code> será falsa. Se <code>e</code>for falsa, <code>!e</code> será verdadeira, conforme a tabela verdade abaixo.</li>
+<li>É um operador <strong>unário</strong>, só atua sobre uma única expressão.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>e</code></th>
+<th style="text-align: center;"><code>!e</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="conectivo-e">Conectivo E<a class="headerlink" href="#conectivo-e" title="Permanent link">&para;</a></h4>
+<ul>
+<li>O conectivo <strong>E</strong> (<code>&amp;&amp;</code>) é <strong>binário</strong>, atua sobre duas expressões <code>e1</code> e <code>e2</code>.</li>
+<li>Retorna verdadeiro apenas quando as duas são verdadeiras.</li>
+<li>Se pelo menos uma delas é falsa, <code>e1 &amp;&amp; e2</code> devolve falso.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>e1</code></th>
+<th style="text-align: center;"><code>e2</code></th>
+<th><code>e1 &amp;&amp; e2</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td>0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td>0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td>0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h4 id="conectivo-ou">Conectivo OU<a class="headerlink" href="#conectivo-ou" title="Permanent link">&para;</a></h4>
+<ul>
+<li>O conectivo <strong>OU</strong> (<code>||</code>) é <strong>binário</strong>, atua sobre duas expressões <code>e1</code> e <code>e2</code>.</li>
+<li>Retorna verdadeiro apenas quando pelo menos uma das expressões é verdadeira.</li>
+<li>Se as duas expressões são falsas, <code>e1 || e2</code> devolve falso.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><code>e1</code></th>
+<th style="text-align: center;"><code>e2</code></th>
+<th>e1 | | e2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td>0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td>1</td>
+</tr>
+<tr>
+<td style="text-align: center;">#### Exemplos</td>
+<td style="text-align: center;"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Uma expressão que avalia se uma variável <code>x</code>é par:
+<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span>
+</code></pre></div></li>
+<li>Uma expressão que avalia se uma variável <code>x</code>é ímpar: 
+<div class="highlight"><pre><span></span><code><span class="o">!</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></li>
+<li>
+<p>Uma expressão que avalia se uma variável <code>x</code>é maior que 50 e menor que 100: 
+<div class="highlight"><pre><span></span><code><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">50</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">100</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Uma expressão que avalia se uma variável é divisível por 3, mas não é divisível por 5
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Uma expressão que avalia se uma variável <code>x</code>é ímpar: 
+<div class="highlight"><pre><span></span><code><span class="o">!</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+</ul>
+<h3 id="se-entao">Se Então<a class="headerlink" href="#se-entao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>A estrutura Se, então, verifica o valor de uma expressão e, <strong>se ela for verdadeira</strong>, executa o bloco de código relacionado à estrutura.</li>
+<li>Sintaxe:
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="n">condicao</span><span class="p">){</span>
+<span class="w">    </span><span class="c1">// inserir codigo a ser executado aqui</span>
+<span class="w">    </span><span class="c1">// caso a condição seja verdadeira</span>
+<span class="p">}</span>
+<span class="c1">// O programa continua a executar a partir daqui</span>
+</code></pre></div></li>
+<li>
+<p>O programa retoma o seu fluxo normal depois do bloco de código. 
+<strong>Exemplo</strong></p>
+</li>
+<li>
+<p>Tome o seguinte problema: o usuário deverá digitar um inteiro via comunicação serial e o circuito acenderá um LED vermelho por um segundo se o inteiro for par.</p>
+</li>
+</ul>
+<p><img alt="Pasted image 20240117010901.png" src="recursos/Pasted%20image%2020240117010901.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pino_led</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">le_inteiro</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">parseInt</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pino_led</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">le_inteiro</span><span class="p">();</span>
+<span class="w">  </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pino_led</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+<span class="w">    </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pino_led</span><span class="p">,</span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w">  </span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>Exemplo</strong></p>
+<ul>
+<li>Agora tome o seguinte problema: construir um circuito que que verifique se existe partículas de gás no ar e acione um alarme caso positivo.</li>
+<li>Para isso precisaremos do sensor de gás e de um dispositivo piezoelétrico, que produzirá o som.
+<img alt="Pasted image 20240117015708.png" src="recursos/Pasted%20image%2020240117015708.png" /></li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">sensor_gas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">A0</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">alarme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">sensor_gas</span><span class="p">,</span><span class="n">INPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">valor_gas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">analogRead</span><span class="p">(</span><span class="n">sensor_gas</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&quot;valor_gas: &quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="n">valor_gas</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">valor_gas</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">250</span><span class="p">){</span>
+<span class="w">        </span><span class="n">tone</span><span class="p">(</span><span class="n">alarme</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">3000</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+- O gás é ser lido através de um pino analógico. Já o alarme é acionado através de um pino digital.
+- Se o sensor acusa uma concentração de gás superior ou igual a 250, acionamos o alarme a uma frequência de 400Hz por 3 segundos através do comando <code>tone</code>.</p>
+<h3 id="senao">Senão<a class="headerlink" href="#senao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>E se quiséssemos que  o programa executasse uma lógica se a condição fosse verdadeira e outra se fosse falsa?</li>
+<li>Para isso temos o <strong>senão</strong> .</li>
+<li>Sintaxe:
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="n">condicao</span><span class="p">){</span>
+<span class="w">    </span><span class="c1">// Comandos que serão executados se a condição for verdadeira</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// comandos que serão executados se a condição for falsa</span>
+<span class="p">}</span>
+<span class="c1">// o programa continua aqui após executar um dos blocos de código acima.</span>
+</code></pre></div></li>
+</ul>
+<p><strong>Exemplo</strong>
+- Vamos tomar o problema anterior de verificar se um lido via comunicação serial é par. Mas desta vez acenderemos um LED verde se ele for par e um LED vermelho se ele for ímpar. Os LEDs deverão ficar ligados por 1 segundo.</p>
+<p><img alt="Pasted image 20240117021800.png" src="recursos/Pasted%20image%2020240117021800.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pino_verde</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">pino_vermelho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">le_inteiro</span><span class="p">(){</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">while</span><span class="p">(</span><span class="n">Serial</span><span class="p">.</span><span class="n">available</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Serial</span><span class="p">.</span><span class="n">parseInt</span><span class="p">();</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="p">(){</span>
+<span class="w">  </span><span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pino_verde</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="w">  </span><span class="n">pinMode</span><span class="p">(</span><span class="n">pino_vermelho</span><span class="p">,</span><span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">loop</span><span class="p">(){</span>
+<span class="w">  </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">le_inteiro</span><span class="p">();</span>
+<span class="w">  </span><span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">){</span>
+<span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pino_verde</span><span class="p">,</span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pino_verde</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="k">else</span><span class="p">{</span>
+<span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pino_vermelho</span><span class="p">,</span><span class="n">HIGH</span><span class="p">);</span>
+<span class="w">        </span><span class="n">delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+<span class="w">        </span><span class="n">digitalWrite</span><span class="p">(</span><span class="n">pino_vermelho</span><span class="p">,</span><span class="n">LOW</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="exercicios_1">Exercícios<a class="headerlink" href="#exercicios_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Faça um circuito que mantenha um LED aceso quando um botão é pressionado e o apague quando ele é pressionado novamente.</li>
+<li>Faça um circuito que acenda um LED apenas quando dois botões são pressionados.</li>
+<li>Elabore um circuito que ligue uma lâmpada caso o sensor de presença detecte movimento.</li>
+<li>Faça um circuito que receba um inteiro via comunicação serial e acenda um LED verde se ele for par e vermelho se ele for ímpar. Os LEDs devem ficar ligados por apenas 1 segundo.</li>
+</ol>
+<h2 id="estruturas-de-repeticao">Estruturas de repetição<a class="headerlink" href="#estruturas-de-repeticao" title="Permanent link">&para;</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.7389ff0e.min.js"></script>
+      
+        <script src="javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
