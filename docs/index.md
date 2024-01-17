@@ -777,11 +777,11 @@ a + c == b + d // Retorna verdadeiro ou falso?
 
 
 #### Conectivo OU
-- O conectivo **OU** (`&&`) é **binário**, atua sobre duas expressões `e1` e `e2`.
+- O conectivo **OU** (`||`) é **binário**, atua sobre duas expressões `e1` e `e2`.
 - Retorna verdadeiro apenas quando pelo menos uma das expressões é verdadeira.
 - Se as duas expressões são falsas, `e1 || e2` devolve falso.
 
-| `e1` | `e2` | `e1 \|\| e2` |
+| `e1` | `e2` | e1 \| \| e2 |
 | :--: | :--: | ---- |
 | 0 | 0 | 0 |
 | 0 | 1 | 1 |
@@ -939,8 +939,9 @@ void loop(){
 ```
 ### Exercícios
 1. Faça um circuito que mantenha um LED aceso quando um botão é pressionado e o apague quando ele é pressionado novamente.
-2. Elabore um circuito que ligue uma lâmpada caso o sensor de presença detecte movimento.
-3. Faça um circuito que receba um inteiro via comunicação serial e acenda um LED verde se ele for par e vermelho se ele for ímpar. Os LEDs devem ficar ligados por apenas 1 segundo.
+2. Faça um circuito que acenda um LED apenas quando dois botões são pressionados.
+3. Elabore um circuito que ligue uma lâmpada caso o sensor de presença detecte movimento.
+4. Faça um circuito que receba um inteiro via comunicação serial e acenda um LED verde se ele for par e vermelho se ele for ímpar. Os LEDs devem ficar ligados por apenas 1 segundo.
 
 ## Estruturas de repetição
 
